@@ -1,1 +1,37 @@
-<p>product works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group" *ngFor="let product of products; let i = index">
+        <li
+          class="list-group-item"
+          (click)="onProductSelect(i)"
+          [ngClass]="{ active: selectedProductIndex == i }"
+        >
+          {{ product.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div
+        class="card"
+        style="width: 30rem"
+        *ngIf="selectedProductIndex >= 0; else nothingSelected"
+      >
+        <img
+          class="card-img-top"
+          [src]="selectedProduct.imageUrl"
+          alt="Product Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedProduct.name }}</h5>
+          <p class="card-text">{{ selectedProduct.description }}</p>
+          <h6>{{ "Rs. " + selectedProduct.price }}</h6>
+          <a (click)="onAddToCart()" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+      <ng-template #nothingSelected
+        ><h6>Please select a product to view details</h6></ng-template
+      >
+    </div>
+  </div>
+</div>

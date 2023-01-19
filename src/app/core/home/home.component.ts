@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,11 @@ export class HomeComponent {
   onSubmit(form: NgForm) {
     console.log('====================================');
     console.log(form);
+    console.log('====================================');
+  }
+  onFormSubmit(homeForm: NgForm) {
+    console.log('====================================');
+    console.log(homeForm);
     console.log('====================================');
   }
 }

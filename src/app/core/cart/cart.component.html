@@ -1,1 +1,8 @@
-<p>cart works!</p>
+<div class="col-md-4">
+  <ul class="list-group" *ngFor="let product of products; let i = index">
+    <li class="list-group-item">
+      {{ product.name }}
+    </li>
+  </ul>
+  <h6>{{ "Cart total: " + cartTotal }}</h6>
+</div>

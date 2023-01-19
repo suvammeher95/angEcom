@@ -1,7 +1,23 @@
 <nav class="nav nav-pills nav-fill">
-  <a class="nav-item nav-link active" href="">Home</a>
-  <a class="nav-item nav-link" href="product">Product</a>
-  <a class="nav-item nav-link" href="cart">Cart</a>
-  <a class="nav-item nav-link disabled" href="admin">Admin</a>
+  <a
+    class="nav-item nav-link"
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a class="nav-item nav-link" routerLink="product" routerLinkActive="active"
+    >Product</a
+  >
+  <a class="nav-item nav-link" routerLink="cart" routerLinkActive="active"
+    >Cart</a
+  >
+  <a
+    class="nav-item nav-link disabled"
+    routerLink="admin"
+    routerLinkActive="active"
+    >Admin</a
+  >
 </nav>
+<hr />
 <router-outlet></router-outlet>
