@@ -9,6 +9,8 @@ import { CartComponent } from './core/cart/cart.component';
 import { Route, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { ApplyDiscountPipe } from './core/pipes/apply-discount.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 const allRoutes: Route[] = [
   { path: '', component: HomeComponent },
@@ -24,12 +26,14 @@ const allRoutes: Route[] = [
     ProductComponent,
     CartComponent,
     HomeComponent,
+    ApplyDiscountPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(allRoutes),
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

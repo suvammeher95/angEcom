@@ -4,5 +4,8 @@
       {{ product.name }}
     </li>
   </ul>
-  <h6>{{ "Cart total: " + cartTotal }}</h6>
+  <h6>{{ "Total Price: " + cartTotal }}</h6>
+  <h6>
+    {{ "Discounted Price: " | uppercase }}
+  </h6>
 </div>

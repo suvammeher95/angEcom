@@ -49,7 +49,14 @@
             <label for="feedback"
               >Please provide your comments or suggestions</label
             >
-            <textarea class="form-control" id="feedback" rows="3"></textarea>
+            <textarea
+              class="form-control"
+              id="feedback"
+              rows="3"
+              ngModel
+              name="feedback"
+              required
+            ></textarea>
           </div>
         </div>
         <button
@@ -60,6 +67,33 @@
           Submit
         </button>
       </form>
+    </div>
+  </div>
+  <hr />
+  <button
+    class="btn btn-secondary"
+    type="button"
+    (click)="onViewAllFeedbacks()"
+  >
+    View all feedbacks</button
+  ><button
+    class="btn btn-danger"
+    type="button"
+    (click)="onDeleteAllFeedbacks()"
+  >
+    Delete all feedbacks
+  </button>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let feedback of feedbacks">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">
+            {{ feedback.fname + " " + feedback.lname }}
+            <small>{{ feedback.email }}</small>
+          </h6>
+          <p class="card-text">{{ feedback.feedback }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
