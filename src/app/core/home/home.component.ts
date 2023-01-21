@@ -15,13 +15,19 @@ export class HomeComponent {
     this.onViewAllFeedbacks();
   }
   onFormSubmit(homeForm: NgForm) {
-    this.http
-      .post('firebaseURL', homeForm.value)
-      .subscribe((responseData) => {});
+    // this.http
+    //   .post(
+    //     'https://angecom-45a5c-default-rtdb.firebaseio.com/feedbacks.json',
+    //     homeForm.value
+    //   )
+    //   .subscribe((responseData) => {});
+    console.log('====================================');
+    console.log(homeForm.value);
+    console.log('====================================');
   }
   onViewAllFeedbacks() {
     this.http
-      .get('firebaseURL')
+      .get('https://angecom-45a5c-default-rtdb.firebaseio.com/feedbacks.json')
       .pipe(
         map((responseData) => {
           const feedbackArray = [];
@@ -38,6 +44,10 @@ export class HomeComponent {
       .subscribe((responseData) => {});
   }
   onDeleteAllFeedbacks() {
-    this.http.delete('firebaseURL').subscribe((responseData) => {});
+    this.http
+      .delete(
+        'https://angecom-45a5c-default-rtdb.firebaseio.com/feedbacks.json'
+      )
+      .subscribe((responseData) => {});
   }
 }

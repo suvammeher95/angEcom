@@ -6,6 +6,9 @@
   </ul>
   <h6>{{ "Total Price: " + cartTotal }}</h6>
   <h6>
-    {{ "Discounted Price: " | uppercase }}
+    {{
+      ("Discounted Price: " | uppercase) +
+        (cartTotal | applyDiscount : 20 | currency : "INR")
+    }}
   </h6>
 </div>

@@ -11,12 +11,13 @@ import { HomeComponent } from './core/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ApplyDiscountPipe } from './core/pipes/apply-discount.pipe';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AuthComponent } from './core/auth/auth.component';
 const allRoutes: Route[] = [
   { path: '', component: HomeComponent },
   { path: 'product', component: ProductComponent },
   { path: 'cart', component: CartComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
@@ -27,6 +28,7 @@ const allRoutes: Route[] = [
     CartComponent,
     HomeComponent,
     ApplyDiscountPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
